@@ -7,3 +7,6 @@ del li[1]
 li.remove("Arif")
 li.append("Ritik")
 print(li)
+li.sort()
+print(li)
+print(sorted(li))
