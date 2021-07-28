@@ -56,12 +56,12 @@ data=requests.get("https://newsapi.org/v2/top-headlines?country=in&apiKey=1366bf
 edata=data.json()
 # print(edata)
 articles = edata['articles']
-vowel = 'aeiou'
+vowel = 'aeiouAEIOU'
 for i in articles:
     title = i['title']
     count={}.fromkeys(vowel,0)
-    print(title)
-    for j in title.lower():
+    print(count)
+    for j in title:
         if j in count:
             count[j]+=1
     print(count)
