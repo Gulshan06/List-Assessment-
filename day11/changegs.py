@@ -1,10 +1,13 @@
 import collections
-import re, time
+import re, time,csv
 try:
+    header =["name","id","designation","salary","address","phone","pincode","AddOn"]
     print("Select an option from menu")
     print("\n")
     print("1. AddEmp")
     print("2. ViewEmp")
+    print("3. Check the employee with salary")
+    print("4. Generate CSV file")
     choice=int(input("enter the choice"))
     def addtimedate():
         time1=time.localtime()
@@ -35,20 +38,25 @@ try:
                 dict['pincode']=pincode
             dict['AddOn']=addtimedate()
             li.append(dict)
-        c=int(input("2. ViewEmp - "))
-        if(c==2):
-            print(li)
+    if(choice==2):
+        print(li)
+    if choice==3:
         n = int(input('enter the salary'))
         def sal(li,n):   
             new_li=[x for x in li if x['salary']>=n]
             return new_li 
-        print(sal(li,n))   
+        print(sal(li,n))
+    if choice==4:
+        with open('Employee.csv','w+',encoding='UTF8',newline='') as s:
+            writer = csv.DictWriter(s,fieldnames=header)
+            writer.writeheader()
+            writer.writerows(li)
+
         # n = int(input('enter the salary'))
         # check= [x for x in li if x["salary"]>=n]
         # print(check)
 except Exception:
     print("something went wrong")
-
 else:
     print('your program is completed successfully')
 finally:
