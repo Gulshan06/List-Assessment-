@@ -39,19 +39,6 @@ try:
             social=input("enter the social marks: ")
             hindi=input("enter the hindi marks: ")
             science=input("enter the science marks: ")
-            # def val(rollno,admin,english,hindi,maths,science,social):
-            #     val=re.search("^[1-9]",rollno)
-            #     val1=re.search('^[1-9]',admin)
-            #     val2=re.search('^[0-9]',english)
-            #     val3=re.search('^[0-9]',maths)
-            #     val4=re.search('^[0-9]',social)
-            #     val5=re.search('^[0-9]',hindi)
-            #     val6=re.search('^[0-9]',science)
-            #     if val and val1 and val2 and val3 and val4 and val5 and val6:
-            #         return [int(rollno),int(admin),int(english),int(maths),int(social),int(hindi),int(science)]
-            #     else:
-            #         print("you had enter wrong input")
-            #         sys.exit()
             obj1.addDetails(name,val(rollno,admin,english,hindi,maths,science,social))
         if choice==2:
             print(student)
