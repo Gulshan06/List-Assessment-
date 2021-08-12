@@ -29,8 +29,8 @@ try:
         elif(choice==2):
             print(productlist)
         elif(choice==3):
-            name= input("enter your name")
-            emailid = input('enter your emailid')
+            name= input("enter customer name -")
+            emailid = input('enter customer emailid - ')
             total_product = []
             final_total=0
             for i in productlist:
