@@ -1,0 +1,46 @@
+{% extends 'header.html' %}
+
+{% block mycontent %}
+<style>
+    body{
+        background-image: url('https://www.clipartkey.com/mpngs/m/100-1005709_transparent-luggage-clipart-black-and-white-plastic-bag.png');
+    }
+</style>
+    <div class="container">
+        <div class="row">
+          <div class="col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+          </div>
+          <div class="col col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+            <center><h1 style="color: red;">All-Products</h1></center>
+             <table class="table table-borderless">
+                 <thead class="table-warning">
+                 <tr>
+                     <th style="color: blue;">productname</th>
+                     <th style="color: blue;">discription</th>
+                     <th style="color: blue;">price</th>
+                     <th style="color: blue;">manufacturer</th>
+                     <th style="color: blue;">manufacturingdate</th>
+                     <th style="color: blue;">expirydate</th>
+                 </tr>
+                </thead>
+
+                <tbody>
+                    {% for i in data %}
+                    <tr>
+                        <td style="color: red;"><b>{{i.productname}}</b></td>
+                        <td style="color: red;"><b>{{i.discription}}</b></td>
+                        <td style="color: red"><b>{{i.price}}</b></td>
+                        <td style="color: red"><b>{{i.manufacturer}}</b></td>
+                        <td style="color: red"><b>{{i.manufacturingdate}}</b></td>
+                        <td style="color: red"><b>{{i.expirydate}}</b></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                  <div class="col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                  </div>
+              </table>
+          </div>
+        </div>
+    </div> 
+
+{% endblock %}

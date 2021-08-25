@@ -1,0 +1,79 @@
+{% extends 'header.html' %} 
+
+{% block mycontent %} 
+<style>
+    body{
+        background-image: url('data:image/png;base64,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');
+    }
+</style>
+
+<h1 align="center" style="color: blue;">Search Items</h1>
+<div class="container">
+    <div class="row">
+        <div class="col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+        </div>
+        <div class="col col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+           <form action="http://127.0.0.1:8000/products/search/" method="POST">
+            <table class="table table-borderless">
+                <tr>
+                    <td style="color: blue;"> <b> Product Name </b></td>
+                    <td><input name="productname" type="text" class="form-control"></td>
+                </tr>
+                
+                
+                <tr>
+                    <td></td>
+                    <td align="center"><button type="submit" class="btn btn-success">SEARCH</button></td>
+                </tr>
+            </table>
+        </form>
+
+            {% if data %} 
+
+            <table class="table table-borderless table-striped">
+                {% for i in data %}
+               
+                <tr>
+                    <td style="color: blue;">Name</td>
+                    <td style="color: blue;">{{i.productname}}</td>
+                </tr>
+
+                <tr>
+                    <td style="color: blue;">Description</td>
+                    <td style="color: blue;">{{i.discription}}</td>
+                </tr>
+
+                <tr>
+                    <td style="color: blue;">Price</td>
+                    <td style="color: blue;">{{i.price}}</td>
+                </tr>
+
+                <tr>
+                    <td style="color: blue;">Manufacturer</td>
+                    <td style="color: blue;">{{i.manufacturer}}</td>
+                </tr>
+
+                <tr>
+                    <td style="color: blue;">manufacturing Date</td>
+                    <td style="color: blue;">{{i.manufacturingdate}}</td>
+                </tr>
+
+                <tr>
+                    <td style="color: blue;">Expiry Date</td>
+                    <td style="color: blue;">{{i.expirydate}}</td>
+                </tr>
+
+
+                {% endfor %} 
+            </table>
+
+           {% endif %}
+
+    </div>
+    </div>  
+            <div class="col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+            </div>
+</div>
+
+{% endblock   %}
+    
